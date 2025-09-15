@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Page Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .box {
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+    }
+    .box1 {
+      background: #3498db;
+      border: 2px solid #2980b9;
+    }
+    .box2 {
+      background: #2ecc71;
+      border: 2px dashed #27ae60;
+    }
+    .box3 {
+      background: #e74c3c;
+      border: 2px dotted #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h2>Grid Content Boxes</h2>
+  <div class="grid-container">
+    <div class="box box1">Box 1: Solid Border</div>
+    <div class="box box2">Box 2: Dashed Border</div>
+    <div class="box box3">Box 3: Dotted Border</div>
+  </div>
+</body>
+</html>
