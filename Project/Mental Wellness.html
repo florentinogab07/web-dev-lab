@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personality Types & Mental Health</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background: #2a7f7f;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+    }
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .sidebar p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Main content */
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      background: #4fc3f7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    /* Circle */
+    .circle {
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      margin: 30px auto;
+      background: conic-gradient(
+        #ffe082 0deg 60deg,
+        #ff8a65 60deg 120deg,
+        #4fc3f7 120deg 180deg,
+        #ba68c8 180deg 240deg,
+        #81c784 240deg 300deg,
+        #ef5350 300deg 360deg
+      );
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .circle .center {
+      background: white;
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+      line-height: 1.3;
+      position: relative;
+      z-index: 1;
+    }
+    .circle .item {
+      position: absolute;
+      width: 120px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .circle .item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 5px;
+      border: 2px solid white;
+    }
+    .top { top: 10px; left: 50%; transform: translateX(-50%); }
+    .topright { top: 100px; right: 30px; }
+    .bottomright { bottom: 100px; right: 30px; }
+    .bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+    .bottomleft { bottom: 100px; left: 30px; }
+    .topleft { top: 100px; left: 30px; }
+
+    /* Risks Grid */
+    .grid {
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    .header-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr;
+      background: #2a7f7f;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+    }
+    .row div { padding: 8px; }
+
+    .isolated { background: #64b5f6; }
+    .perfect { background: #81c784; }
+    .worry { background: #4fc3f7; }
+    .daydream { background: #ba68c8; }
+    .drama { background: #9575cd; }
+    .overachieve { background: #ef5350; }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>About</h2>
+    <p>This toolkit explains personality types prone to mental health conditions, their risks, and practical tips for self-care.</p>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <header>
+      <h1>Personality Types & Mental Health</h1>
+    </header>
+
+    <!-- Circle Diagram -->
+    <div class="circle">
+      <div class="center">Are you one of these?</div>
+      <div class="item top">
+        <img src="https://via.placeholder.com/60" alt="Overachiever">
+        Overachiever
+      </div>
+      <div class="item topright">
+        <img src="https://via.placeholder.com/60" alt="Dramatist">
+        Dramatist
+      </div>
+      <div class="item bottomright">
+        <img src="https://via.placeholder.com/60" alt="Daydreamer">
+        Daydreamer
+      </div>
+      <div class="item bottom">
+        <img src="https://via.placeholder.com/60" alt="Worry Wart">
+        Worry Wart
+      </div>
+      <div class="item bottomleft">
+        <img src="https://via.placeholder.com/60" alt="Perfectionist">
+        Perfectionist
+      </div>
+      <div class="item topleft">
+        <img src="https://via.placeholder.com/60" alt="Introvert">
+        Isolated Introvert
+      </div>
+    </div>
+
+    <!-- Risks Grid -->
+    <div class="grid">
+      <div class="header-row">
+        <div>Risks</div>
+        <div>Why?</div>
+        <div>Tips</div>
+      </div>
+
+      <div class="row isolated">
+        <div>Social anxiety, Panic attacks, Depression</div>
+        <div>Solitude makes it hard to seek help or support when needed.</div>
+        <div>Try gentle group activities or therapy to connect with others.</div>
+      </div>
+
+      <div class="row perfect">
+        <div>Depression, Burnout</div>
+        <div>High standards often feel impossible to meet.</div>
+        <div>Learn to accept progress, not perfection.</div>
+      </div>
+
+      <div class="row worry">
+        <div>Anxiety, Panic Attacks</div>
+        <div>Constantly imagining worst-case scenarios drains energy.</div>
+        <div>Practice mindfulness to calm catastrophic thoughts.</div>
+      </div>
+
+      <div class="row daydream">
+        <div>Bipolar disorder, Depression</div>
+        <div>Creative intensity may cause imbalance in focus.</div>
+        <div>Balance imagination with grounding routines.</div>
+      </div>
+
+      <div class="row drama">
+        <div>Anxiety</div>
+        <div>Emotional highs and lows lead to stress and tension.</div>
+        <div>Reflect on triggers, practice grounding exercises.</div>
+      </div>
+
+      <div class="row overachieve">
+        <div>Anxiety, Depression, Eating disorders</div>
+        <div>Self-esteem depends on constant achievement.</div>
+        <div>Celebrate small wins and practice self-kindness.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
