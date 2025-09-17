@@ -2,101 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mental Wellness Toolkit</title>
+  <title>Personality Types & Mental Health</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f3f7fa;
       margin: 0;
-      padding: 20px;
+      background: #f3f7fa;
       color: #333;
+      padding: 20px;
     }
     h1 {
       text-align: center;
-      margin-bottom: 20px;
       color: #2a7f7f;
+      margin-bottom: 30px;
     }
+
+    /* Circle personality wheel */
+    .circle {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      margin: 0 auto 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: conic-gradient(
+        #ffe082 0deg 60deg,
+        #ff8a65 60deg 120deg,
+        #4fc3f7 120deg 180deg,
+        #ba68c8 180deg 240deg,
+        #81c784 240deg 300deg,
+        #ffb74d 300deg 360deg
+      );
+      position: relative;
+    }
+    .circle span {
+      position: absolute;
+      font-weight: bold;
+      color: #333;
+      width: 100px;
+      text-align: center;
+    }
+    .top { top: 20px; left: 50%; transform: translateX(-50%); }
+    .right { right: 20px; top: 50%; transform: translateY(-50%); }
+    .bottom { bottom: 20px; left: 50%; transform: translateX(-50%); }
+    .left { left: 20px; top: 50%; transform: translateY(-50%); }
+    .topleft { top: 70px; left: 80px; }
+    .bottomright { bottom: 70px; right: 80px; }
+
+    .center {
+      background: white;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: bold;
+      color: #444;
+    }
+
+    /* Risks / Why / Tips section */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
     }
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .icon {
-      font-size: 40px;
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr;
+      padding: 15px;
       margin-bottom: 10px;
-    }
-    .title {
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #2a7f7f;
-    }
-    .desc {
+      border-radius: 10px;
+      color: white;
       font-size: 14px;
-      color: #555;
+    }
+    .row div {
+      padding: 10px;
+    }
+    .isolated { background: #64b5f6; }
+    .perfect { background: #81c784; }
+    .worry { background: #4fc3f7; }
+    .daydream { background: #ba68c8; }
+    .drama { background: #9575cd; }
+    .overachieve { background: #ef5350; }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr;
+      font-weight: bold;
+      background: #2a7f7f;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>🌿 Mental Wellness & Self-Care Toolkit 🌿</h1>
+  <h1>Personality Types & Mental Health</h1>
 
+  <!-- Personality Circle -->
+  <div class="circle">
+    <span class="top">Overachiever</span>
+    <span class="right">Dramatist</span>
+    <span class="bottom">Daydreamer</span>
+    <span class="left">Isolated Introvert</span>
+    <span class="topleft">Perfectionist</span>
+    <span class="bottomright">Worry Wart</span>
+    <div class="center">Are you one of these?</div>
+  </div>
+
+  <!-- Risks/Why/Tips Table -->
   <div class="grid">
-    <div class="card">
-      <div class="icon">💧</div>
-      <div class="title">Drink Water</div>
-      <div class="desc">Stay hydrated throughout the day.</div>
+    <div class="header">
+      <div>The Risks</div>
+      <div>Why?</div>
+      <div>Tip</div>
     </div>
-    <div class="card">
-      <div class="icon">🧘</div>
-      <div class="title">Stretch</div>
-      <div class="desc">Take short breaks to stretch your body.</div>
+
+    <div class="row isolated">
+      <div>Social anxiety, Panic attacks, Depression</div>
+      <div>Preferring solitude makes it hard to seek help.</div>
+      <div>Introverts can benefit from gentle group work.</div>
     </div>
-    <div class="card">
-      <div class="icon">✍️</div>
-      <div class="title">Gratitude</div>
-      <div class="desc">Write down one thing you’re grateful for.</div>
+
+    <div class="row perfect">
+      <div>Depression, Anxiety, Burnout</div>
+      <div>Perfectionists set impossibly high standards.</div>
+      <div>Learn to accept “good enough” and relax more.</div>
     </div>
-    <div class="card">
-      <div class="icon">📵</div>
-      <div class="title">Offline Time</div>
-      <div class="desc">Spend 15 minutes away from screens.</div>
+
+    <div class="row worry">
+      <div>Anxiety, Panic attacks</div>
+      <div>Constantly imagining worst-case scenarios.</div>
+      <div>Practice mindfulness and CBT techniques.</div>
     </div>
-    <div class="card">
-      <div class="icon">🌬️</div>
-      <div class="title">Breathing</div>
-      <div class="desc">Practice deep breathing for calmness.</div>
+
+    <div class="row daydream">
+      <div>Bipolar disorder, Depression</div>
+      <div>Creative minds risk imbalance in focus.</div>
+      <div>Find balance in creativity and routine.</div>
     </div>
-    <div class="card">
-      <div class="icon">🌙</div>
-      <div class="title">Sleep</div>
-      <div class="desc">Aim for 7–8 hours of rest.</div>
+
+    <div class="row drama">
+      <div>Anxiety</div>
+      <div>Adrenaline highs from emotional intensity.</div>
+      <div>Reflect on triggers and practice grounding.</div>
     </div>
-    <div class="card">
-      <div class="icon">🍎</div>
-      <div class="title">Healthy Snack</div>
-      <div class="desc">Choose fruits or nuts for energy.</div>
-    </div>
-    <div class="card">
-      <div class="icon">🚶</div>
-      <div class="title">Walk</div>
-      <div class="desc">Go for a short mindful walk.</div>
-    </div>
-    <div class="card">
-      <div class="icon">😊</div>
-      <div class="title">Reflection</div>
-      <div class="desc">Think of one positive moment today.</div>
+
+    <div class="row overachieve">
+      <div>Anxiety, Depression, Eating disorders</div>
+      <div>Self-esteem tied to constant achievement.</div>
+      <div>Celebrate small wins; learn self-compassion.</div>
     </div>
   </div>
 </body>
