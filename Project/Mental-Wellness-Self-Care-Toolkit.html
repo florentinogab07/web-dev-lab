@@ -6,65 +6,97 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f7fafc;
-      color: #333;
-      text-align: center;
+      background: #f3f7fa;
+      margin: 0;
       padding: 20px;
+      color: #333;
     }
     h1 {
+      text-align: center;
+      margin-bottom: 20px;
       color: #2a7f7f;
     }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 40px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-    .circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: #2a7f7f;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .title {
       font-weight: bold;
-      margin: 0 40px;
+      margin-bottom: 8px;
+      color: #2a7f7f;
     }
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    .item {
-      background: #e6f5f5;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .item:hover {
-      background: #cceeee;
+    .desc {
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <h1>🌿 Mental Wellness & Self-Care Toolkit 🌿</h1>
 
-  <div class="container">
-    <div class="list">
-      <div class="item">💧 Drink Water</div>
-      <div class="item">🧘 Stretch Break</div>
-      <div class="item">✍️ Gratitude Journal</div>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">💧</div>
+      <div class="title">Drink Water</div>
+      <div class="desc">Stay hydrated throughout the day.</div>
     </div>
-
-    <div class="circle">Your Core</div>
-
-    <div class="list">
-      <div class="item">📵 Offline Time</div>
-      <div class="item">🌬️ Breathing</div>
-      <div class="item">🌙 Sleep Well</div>
+    <div class="card">
+      <div class="icon">🧘</div>
+      <div class="title">Stretch</div>
+      <div class="desc">Take short breaks to stretch your body.</div>
+    </div>
+    <div class="card">
+      <div class="icon">✍️</div>
+      <div class="title">Gratitude</div>
+      <div class="desc">Write down one thing you’re grateful for.</div>
+    </div>
+    <div class="card">
+      <div class="icon">📵</div>
+      <div class="title">Offline Time</div>
+      <div class="desc">Spend 15 minutes away from screens.</div>
+    </div>
+    <div class="card">
+      <div class="icon">🌬️</div>
+      <div class="title">Breathing</div>
+      <div class="desc">Practice deep breathing for calmness.</div>
+    </div>
+    <div class="card">
+      <div class="icon">🌙</div>
+      <div class="title">Sleep</div>
+      <div class="desc">Aim for 7–8 hours of rest.</div>
+    </div>
+    <div class="card">
+      <div class="icon">🍎</div>
+      <div class="title">Healthy Snack</div>
+      <div class="desc">Choose fruits or nuts for energy.</div>
+    </div>
+    <div class="card">
+      <div class="icon">🚶</div>
+      <div class="title">Walk</div>
+      <div class="desc">Go for a short mindful walk.</div>
+    </div>
+    <div class="card">
+      <div class="icon">😊</div>
+      <div class="title">Reflection</div>
+      <div class="desc">Think of one positive moment today.</div>
     </div>
   </div>
 </body>
