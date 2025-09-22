@@ -6,122 +6,167 @@
   <title>Mental Wellness & Self-Care Toolkit</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f4f8fb;
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #f4f6f9;
       color: #333;
     }
-    header {
-      background: #4CAF50;
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #2c3e50;
       color: white;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
+      min-height: 100vh;
+      position: fixed;
       top: 0;
-      z-index: 1000;
+      left: 0;
+      padding: 20px;
     }
-    nav {
-      margin-top: 10px;
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 20px;
     }
-    nav a {
+
+    .sidebar a {
+      display: block;
       color: white;
-      margin: 0 10px;
       text-decoration: none;
-      font-weight: bold;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    .sidebar a:hover {
+      background: #34495e;
     }
+
+    /* Main content */
+    .content {
+      margin-left: 270px;
+      padding: 30px;
+      flex: 1;
+    }
+
     section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      border-bottom: 1px solid #ddd;
+      background: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     section h2 {
-      color: #4CAF50;
+      color: #2c3e50;
+      margin-bottom: 15px;
     }
+
+    section img {
+      float: right;
+      width: 120px;
+      margin-left: 15px;
+      border-radius: 8px;
+    }
+
     footer {
-      background: #333;
-      color: white;
       text-align: center;
       padding: 20px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 20px;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Mental Wellness & Self-Care Toolkit</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#stress">Stress</a>
-      <a href="#sleep">Sleep</a>
-      <a href="#nutrition">Nutrition</a>
-      <a href="#exercise">Exercise</a>
-      <a href="#mindfulness">Mindfulness</a>
-      <a href="#social">Social</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#resources">Resources</a>
-    </nav>
-  </header>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Wellness Toolkit</h2>
+    <a href="#home">Home</a>
+    <a href="#nutrition">Nutrition</a>
+    <a href="#exercise">Exercise</a>
+    <a href="#sleep">Sleep</a>
+    <a href="#mindfulness">Mindfulness</a>
+    <a href="#stress">Stress</a>
+    <a href="#social">Social</a>
+    <a href="#toolkit">Toolkit</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-  <section id="home">
-    <h2>Welcome</h2>
-    <p>This toolkit is designed to guide you in achieving better mental wellness and practicing self-care in your daily life. Explore each section to discover tips, strategies, and resources.</p>
-  </section>
+  <!-- Main content -->
+  <div class="content">
 
-  <section id="about">
-    <h2>About Mental Wellness</h2>
-    <p>Mental wellness means having a positive mindset, emotional balance, and resilience in handling life’s challenges. It is as important as physical health.</p>
-  </section>
+    <section id="home">
+      <h2>Welcome</h2>
+      <img src="https://via.placeholder.com/120" alt="Wellness">
+      <p>Welcome to the Mental Wellness & Self-Care Toolkit. Explore practical strategies and helpful resources to support your mental well-being and improve daily life.</p>
+    </section>
 
-  <section id="stress">
-    <h2>Managing Stress</h2>
-    <p>Stress is a normal part of life. Deep breathing, journaling, and exercise are effective ways to manage stress and regain control of your emotions.</p>
-  </section>
+    <section id="nutrition">
+      <h2>Nutrition</h2>
+      <img src="https://via.placeholder.com/120" alt="Nutrition">
+      <p>Healthy eating improves both your physical and mental health. A balanced diet rich in fruits, vegetables, and whole grains supports energy levels and mood stability.</p>
+    </section>
 
-  <section id="sleep">
-    <h2>The Importance of Sleep</h2>
-    <p>Good sleep improves mood, focus, and overall mental health. Aim for 7–9 hours per night and maintain a consistent bedtime routine.</p>
-  </section>
+    <section id="exercise">
+      <h2>Exercise</h2>
+      <img src="https://via.placeholder.com/120" alt="Exercise">
+      <p>Regular exercise reduces anxiety and depression, boosts mood, and helps manage stress. Even simple movements like walking daily can make a big difference.</p>
+    </section>
 
-  <section id="nutrition">
-    <h2>Healthy Eating</h2>
-    <p>Nutritious food fuels not only the body but also the mind. Include fruits, vegetables, whole grains, and adequate water intake in your daily meals.</p>
-  </section>
+    <section id="sleep">
+      <h2>Sleep</h2>
+      <img src="https://via.placeholder.com/120" alt="Sleep">
+      <p>Getting 7–9 hours of sleep improves focus, memory, and emotional resilience. Develop a regular bedtime routine and avoid screens before bed.</p>
+    </section>
 
-  <section id="exercise">
-    <h2>Exercise & Movement</h2>
-    <p>Regular physical activity releases endorphins that reduce anxiety and boost mood. Even a 20-minute walk can improve mental clarity.</p>
-  </section>
+    <section id="mindfulness">
+      <h2>Mindfulness</h2>
+      <img src="https://via.placeholder.com/120" alt="Mindfulness">
+      <p>Mindfulness and meditation help calm the mind and keep you present in the moment. Practice deep breathing or short meditation sessions daily.</p>
+    </section>
 
-  <section id="mindfulness">
-    <h2>Mindfulness & Meditation</h2>
-    <p>Mindfulness helps you stay present and calm. Practice meditation, gratitude journaling, or mindful breathing daily to strengthen focus and peace of mind.</p>
-  </section>
+    <section id="stress">
+      <h2>Stress Management</h2>
+      <img src="https://via.placeholder.com/120" alt="Stress">
+      <p>Stress is part of life, but managing it is essential. Techniques like journaling, yoga, or listening to calming music can reduce stress levels.</p>
+    </section>
 
-  <section id="social">
-    <h2>Social Connections</h2>
-    <p>Building and maintaining supportive relationships improves mental wellness. Spend time with loved ones and communicate openly about your feelings.</p>
-  </section>
+    <section id="social">
+      <h2>Social Connections</h2>
+      <img src="https://via.placeholder.com/120" alt="Social">
+      <p>Building healthy relationships enhances your mental wellness. Surround yourself with supportive people and maintain meaningful connections.</p>
+    </section>
 
-  <section id="toolkit">
-    <h2>Self-Care Toolkit</h2>
-    <p>This toolkit includes journaling, relaxation techniques, goal setting, and creative hobbies. Use these tools to recharge your energy and nurture self-love.</p>
-  </section>
+    <section id="toolkit">
+      <h2>Self-Care Toolkit</h2>
+      <img src="https://via.placeholder.com/120" alt="Toolkit">
+      <p>Use tools like gratitude journals, relaxation exercises, and creative hobbies to recharge your energy and take care of your emotional health.</p>
+    </section>
 
-  <section id="resources">
-    <h2>Resources & Support</h2>
-    <p>If you need extra help, reach out to mental health professionals, counselors, or support groups. Remember, asking for help is a sign of strength.</p>
-  </section>
+    <section id="resources">
+      <h2>Resources</h2>
+      <img src="https://via.placeholder.com/120" alt="Resources">
+      <p>Explore helpful resources including mental health hotlines, support groups, and trusted online guides to get the assistance you need.</p>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Mental Wellness & Self-Care Toolkit | Designed for awareness and learning</p>
-  </footer>
+    <section id="contact">
+      <h2>Contact</h2>
+      <img src="https://via.placeholder.com/120" alt="Contact">
+      <p>If you need help, don’t hesitate to reach out to a counselor or mental health professional. Support is available when you ask for it.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Mental Wellness & Self-Care Toolkit | Built for Awareness and Education</p>
+    </footer>
+  </div>
 
 </body>
 </html>
+
