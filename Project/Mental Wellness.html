@@ -1,161 +1,562 @@
+/* style.css - shared stylesheet */
+:root{
+  --accent:#2a7f7f;
+  --accent-2:#4fc3f7;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --bg:#f4f7fb;
+  --glass: rgba(255,255,255,0.85);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter,Arial,Helvetica,sans-serif; background:var(--bg); color:#1f2937}
+a{color:var(--accent); text-decoration:none}
+.container{max-width:1100px; margin:20px auto; padding:20px}
+.header{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:white; padding:18px 20px; border-radius:10px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px;
+}
+.header .logo{font-weight:700; font-size:20px}
+.nav{display:flex; gap:12px}
+.nav a{color:white; padding:8px 12px; border-radius:8px; font-weight:600}
+.nav a:hover{background:rgba(255,255,255,0.12)}
+
+.grid{display:grid; gap:18px}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px}
+.card{
+  background:var(--card); padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(15,23,42,0.06);
+}
+.card h3{margin:0 0 8px 0}
+.card p{margin:0; color:var(--muted)}
+.hero{display:flex; gap:20px; align-items:center; padding:18px; background:var(--glass); border-radius:10px}
+.hero .left{flex:1}
+.hero .right{width:220px; text-align:center}
+.button{
+  display:inline-block; background:var(--accent); color:white; padding:10px 14px; border-radius:8px; font-weight:700;
+  box-shadow:0 6px 14px rgba(42,127,127,0.12)
+}
+.small{font-size:14px; color:var(--muted)}
+
+.circle-wheel{
+  width:480px; height:480px; border-radius:50%; margin:12px auto; position:relative;
+  background:conic-gradient(#ffe082 0 60deg,#ff8a65 60deg 120deg,#4fc3f7 120deg 180deg,#ba68c8 180deg 240deg,#81c784 240deg 300deg,#ef5350 300deg 360deg);
+  display:flex; align-items:center; justify-content:center;
+}
+.wheel-center{width:170px;height:170px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;font-weight:700}
+.wheel-item{position:absolute;width:120px;text-align:center;color:white;font-weight:700;font-size:13px}
+.wheel-item img{width:56px;height:56px;border-radius:50%;border:3px solid rgba(255,255,255,0.9);display:block;margin:0 auto 6px}
+
+/* positions (approx) */
+.top{top:12px;left:50%;transform:translateX(-50%)}
+.topright{top:90px;right:28px}
+.bottomright{bottom:90px;right:28px}
+.bottom{bottom:12px;left:50%;transform:translateX(-50%)}
+.bottomleft{bottom:90px;left:28px}
+.topleft{top:90px;left:28px}
+
+/* grid table section */
+.table {
+  display:grid; grid-template-columns:1fr 2fr 2fr; gap:12px; align-items:start;
+  margin-top:18px;
+}
+.table .head{background:var(--accent);color:white;padding:12px;border-radius:8px;font-weight:700;text-align:center}
+.row{display:contents}
+.cell{
+  padding:14px;border-radius:8px;color:white;font-weight:600;
+}
+.isolated{background:#64b5f6}
+.perfect{background:#81c784}
+.worry{background:#4fc3f7}
+.daydream{background:#ba68c8}
+.drama{background:#9575cd}
+.over{background:#ef5350}
+
+/* form and footer */
+.form-group{margin-bottom:12px}
+.input, .textarea{
+  width:100%; padding:10px; border:1px solid #e6e9ef; border-radius:8px; font-size:14px
+}
+.footer{margin-top:30px;padding:20px;text-align:center;color:var(--muted);font-size:14px}
+@media (max-width:900px){
+  .header{flex-direction:column; align-items:flex-start}
+  .circle-wheel{width:360px;height:360px}
+}
+@media (max-width:600px){
+  .table{grid-template-columns:1fr}
+  .circle-wheel{width:300px;height:300px}
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Personality Types & Mental Health</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f3f7fa;
-      color: #333;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #2a7f7f;
-      margin-bottom: 30px;
-    }
-
-    /* Circle personality wheel */
-    .circle {
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      margin: 0 auto 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: conic-gradient(
-        #ffe082 0deg 60deg,
-        #ff8a65 60deg 120deg,
-        #4fc3f7 120deg 180deg,
-        #ba68c8 180deg 240deg,
-        #81c784 240deg 300deg,
-        #ffb74d 300deg 360deg
-      );
-      position: relative;
-    }
-    .circle span {
-      position: absolute;
-      font-weight: bold;
-      color: #333;
-      width: 100px;
-      text-align: center;
-    }
-    .top { top: 20px; left: 50%; transform: translateX(-50%); }
-    .right { right: 20px; top: 50%; transform: translateY(-50%); }
-    .bottom { bottom: 20px; left: 50%; transform: translateX(-50%); }
-    .left { left: 20px; top: 50%; transform: translateY(-50%); }
-    .topleft { top: 70px; left: 80px; }
-    .bottomright { bottom: 70px; right: 80px; }
-
-    .center {
-      background: white;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-weight: bold;
-      color: #444;
-    }
-
-    /* Risks / Why / Tips section */
-    .grid {
-      max-width: 900px;
-      margin: auto;
-    }
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 2fr 2fr;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      color: white;
-      font-size: 14px;
-    }
-    .row div {
-      padding: 10px;
-    }
-    .isolated { background: #64b5f6; }
-    .perfect { background: #81c784; }
-    .worry { background: #4fc3f7; }
-    .daydream { background: #ba68c8; }
-    .drama { background: #9575cd; }
-    .overachieve { background: #ef5350; }
-    .header {
-      display: grid;
-      grid-template-columns: 1fr 2fr 2fr;
-      font-weight: bold;
-      background: #2a7f7f;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <title>Mental Wellness Toolkit — Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Personality Types & Mental Health</h1>
-
-  <!-- Personality Circle -->
-  <div class="circle">
-    <span class="top">Overachiever</span>
-    <span class="right">Dramatist</span>
-    <span class="bottom">Daydreamer</span>
-    <span class="left">Isolated Introvert</span>
-    <span class="topleft">Perfectionist</span>
-    <span class="bottomright">Worry Wart</span>
-    <div class="center">Are you one of these?</div>
-  </div>
-
-  <!-- Risks/Why/Tips Table -->
-  <div class="grid">
+  <div class="container">
     <div class="header">
-      <div>The Risks</div>
-      <div>Why?</div>
-      <div>Tip</div>
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
 
-    <div class="row isolated">
-      <div>Social anxiety, Panic attacks, Depression</div>
-      <div>Preferring solitude makes it hard to seek help.</div>
-      <div>Introverts can benefit from gentle group work.</div>
+    <section class="hero card">
+      <div class="left">
+        <h1>Welcome to the Mental Wellness & Self-Care Toolkit</h1>
+        <p class="small">A simple, practical collection of tools and daily practices to support mental health and build resilient habits.</p>
+        <p style="margin-top:14px">
+          <a class="button" href="toolkit.html">Open Toolkit</a>
+        </p>
+      </div>
+      <div class="right">
+        <img src="https://via.placeholder.com/200x120?text=Wellness" alt="wellness" style="width:100%; border-radius:8px">
+      </div>
+    </section>
+
+    <div style="margin-top:20px" class="cards">
+      <div class="card">
+        <h3>Daily Routine</h3>
+        <p class="small">Short checklist and reminders to keep your day balanced.</p>
+      </div>
+      <div class="card">
+        <h3>Quick Relief</h3>
+        <p class="small">Breathing, grounding, and short mindfulness practices you can do anywhere.</p>
+      </div>
+      <div class="card">
+        <h3>Long-Term Habits</h3>
+        <p class="small">Sleep, nutrition, and movement suggestions for sustained wellness.</p>
+      </div>
     </div>
 
-    <div class="row perfect">
-      <div>Depression, Anxiety, Burnout</div>
-      <div>Perfectionists set impossibly high standards.</div>
-      <div>Learn to accept “good enough” and relax more.</div>
+    <div class="footer">Made with care • Mental Wellness Toolkit</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
 
-    <div class="row worry">
-      <div>Anxiety, Panic attacks</div>
-      <div>Constantly imagining worst-case scenarios.</div>
-      <div>Practice mindfulness and CBT techniques.</div>
+    <div class="card">
+      <h2>About this Toolkit</h2>
+      <p class="small">This toolkit collects practical self-care techniques and educational resources to help you build daily routines, manage stress, and reach out for support when needed. It is not a substitute for professional care but aims to offer accessible strategies for everyday mental wellness.</p>
+
+      <h3 style="margin-top:18px">Goals</h3>
+      <ul>
+        <li>Provide short, actionable self-care strategies</li>
+        <li>Help users form healthy routines</li>
+        <li>Offer resources for professional support</li>
+      </ul>
     </div>
 
-    <div class="row daydream">
-      <div>Bipolar disorder, Depression</div>
-      <div>Creative minds risk imbalance in focus.</div>
-      <div>Find balance in creativity and routine.</div>
+    <div class="footer">© Wellness Toolkit</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Toolkit — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
 
-    <div class="row drama">
-      <div>Anxiety</div>
-      <div>Adrenaline highs from emotional intensity.</div>
-      <div>Reflect on triggers and practice grounding.</div>
+    <div class="card">
+      <h2>Toolkit Overview</h2>
+      <p class="small">Pick a self-care area below to open pages with tools and tips.</p>
+
+      <div class="cards" style="margin-top:12px">
+        <div class="card"><h3><a href="breathing.html">Breathing</a></h3><p class="small">Quick guided exercises</p></div>
+        <div class="card"><h3><a href="sleep.html">Sleep</a></h3><p class="small">Sleep hygiene tips</p></div>
+        <div class="card"><h3><a href="nutrition.html">Nutrition</a></h3><p class="small">Hydration & food ideas</p></div>
+        <div class="card"><h3><a href="exercise.html">Exercise</a></h3><p class="small">Short movement routines</p></div>
+        <div class="card"><h3><a href="mindfulness.html">Mindfulness</a></h3><p class="small">Journaling & grounding</p></div>
+        <div class="card"><h3><a href="resources.html">Resources</a></h3><p class="small">Support & reading list</p></div>
+      </div>
     </div>
 
-    <div class="row overachieve">
-      <div>Anxiety, Depression, Eating disorders</div>
-      <div>Self-esteem tied to constant achievement.</div>
-      <div>Celebrate small wins; learn self-compassion.</div>
+    <div class="card" style="margin-top:20px">
+      <h2>Personality Wheel (overview)</h2>
+      <div class="circle-wheel" aria-hidden="true">
+        <div class="wheel-center">Are you one of these?</div>
+
+        <div class="wheel-item top">
+          <img src="https://via.placeholder.com/56" alt="Overachiever" />
+          Overachiever
+        </div>
+        <div class="wheel-item topright">
+          <img src="https://via.placeholder.com/56" alt="Dramatist" />
+          Dramatist
+        </div>
+        <div class="wheel-item bottomright">
+          <img src="https://via.placeholder.com/56" alt="Daydreamer" />
+          Daydreamer
+        </div>
+        <div class="wheel-item bottom">
+          <img src="https://via.placeholder.com/56" alt="Worry" />
+          Worry Wart
+        </div>
+        <div class="wheel-item bottomleft">
+          <img src="https://via.placeholder.com/56" alt="Perfectionist" />
+          Perfectionist
+        </div>
+        <div class="wheel-item topleft">
+          <img src="https://via.placeholder.com/56" alt="Introvert" />
+          Isolated Introvert
+        </div>
+      </div>
+
     </div>
+
+    <div class="footer">Toolkit • self-care</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Breathing Exercises — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="card">
+      <h2>3 Simple Breathing Exercises</h2>
+      <ol>
+        <li><strong>Box breathing:</strong> Inhale 4s → Hold 4s → Exhale 4s → Hold 4s. Repeat 4 cycles.</li>
+        <li><strong>4-7-8 breath:</strong> Inhale 4s → Hold 7s → Exhale 8s. Repeat 4–6 cycles.</li>
+        <li><strong>Diaphragmatic breath:</strong> Breathe slowly into belly for calm — place hand on belly and expand, then exhale.</li>
+      </ol>
+      <p class="small">Try these seated or lying down. Stop if you feel lightheaded.</p>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3>Quick Grounding</h3>
+      <p class="small">Use 5-4-3-2-1: name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste.</p>
+    </div>
+
+    <div class="footer">Breathing • quick relief</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sleep — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="card">
+      <h2>Sleep Hygiene Tips</h2>
+      <ul>
+        <li>Keep a consistent sleep/wake schedule.</li>
+        <li>Create a calm bedtime routine (no screens 30–60 min before bed).</li>
+        <li>Make your bedroom cool, dark, and quiet.</li>
+        <li>Avoid heavy meals, caffeine, and alcohol before bed.</li>
+      </ul>
+      <p class="small">If sleep problems persist, consider discussing with a healthcare provider.</p>
+    </div>
+
+    <div class="footer">Sleep • rest & recovery</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Nutrition — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="card">
+      <h2>Nutrition & Hydration</h2>
+      <p class="small">Healthy eating supports mood and energy. Try these simple habits:</p>
+      <ul>
+        <li>Drink water regularly (start day with a glass).</li>
+        <li>Include protein, healthy fats, and fiber at meals.</li>
+        <li>Snack on fruit, nuts, or yogurt instead of high-sugar treats.</li>
+      </ul>
+    </div>
+
+    <div class="footer">Nutrition • fuel your day</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Exercise — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="card">
+      <h2>Movement & Short Routines</h2>
+      <p class="small">Movement helps mood — try these short options:</p>
+      <ul>
+        <li>5–10 minute stretch break every hour during long sitting sessions.</li>
+        <li>20–30 minute brisk walk daily.</li>
+        <li>Simple bodyweight circuit: squats, push-ups, lunges (2 rounds).</li>
+      </ul>
+    </div>
+
+    <div class="footer">Exercise • move for mood</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mindfulness — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="card">
+      <h2>Mindfulness & Journaling</h2>
+      <p class="small">Short practices that help focus and regulate mood:</p>
+      <ul>
+        <li>5-min breathing or body-scan meditation.</li>
+        <li>Gratitude journal: write 1–3 things you're grateful for daily.</li>
+        <li>Reflective prompts: "What helped me today?" "What do I need tomorrow?"</li>
+      </ul>
+    </div>
+
+    <div class="footer">Mindfulness • daily practice</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Resources — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="card">
+      <h2>Support & Reading</h2>
+      <ul>
+        <li>Emergency / Crisis: call local emergency numbers if you are in danger.</li>
+        <li>Local helplines: add phone numbers here for your country.</li>
+        <li>Books & articles: list trusted reading (CBT intro, mindfulness guides).</li>
+        <li>Therapy directories: find licensed providers in your area.</li>
+      </ul>
+      <p class="small">If you are in immediate danger, please contact local emergency services.</p>
+    </div>
+
+    <div class="footer">Resources • help & reading</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact — Wellness Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Wellness Toolkit</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="breathing.html">Breathing</a>
+        <a href="sleep.html">Sleep</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="card">
+      <h2>Contact & Feedback</h2>
+      <p class="small">This form is static (no server). Replace with your backend or a service like Formspree to collect messages.</p>
+
+      <div class="form-group">
+        <label>Name</label>
+        <input class="input" type="text" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input class="input" type="email" placeholder="your@example.com" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="textarea" rows="5" placeholder="Your message..."></textarea>
+      </div>
+      <button class="button">Send (static)</button>
+    </div>
+
+    <div class="footer">Contact • Wellness Toolkit</div>
   </div>
 </body>
 </html>
