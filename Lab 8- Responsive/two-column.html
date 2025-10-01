@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Column Layout</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .text, .image {
+      flex: 1;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text">
+      <h2>About Our Service</h2>
+      <p>This is a description of the service. On smaller screens, this text appears above the image. On larger screens, it appears on the left.</p>
+    </div>
+    <div class="image">
+      <img src="https://via.placeholder.com/400" alt="Sample Image">
+    </div>
+  </div>
+</body>
+</html>

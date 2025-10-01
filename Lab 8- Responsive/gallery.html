@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Grid Gallery</title>
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    @media (min-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3+ columns on desktop */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Photo Gallery</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300" alt="Sample 1">
+    <img src="https://via.placeholder.com/300" alt="Sample 2">
+    <img src="https://via.placeholder.com/300" alt="Sample 3">
+    <img src="https://via.placeholder.com/300" alt="Sample 4">
+    <img src="https://via.placeholder.com/300" alt="Sample 5">
+  </div>
+</body>
+</html>
