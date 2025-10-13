@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #e6e6e6;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 8px 0;
+    }
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Menu</h1>
+  <ul>
+    <li>☕ Coffee – ₱120</li>
+    <li>🍵 Matcha Latte – ₱150</li>
+    <li>🥐 Croissant – ₱90</li>
+    <li>🍰 Cheesecake – ₱180</li>
+  </ul>
+
+  <a href="nav-page.html">← Back to Home</a>
+</body>
+</html>

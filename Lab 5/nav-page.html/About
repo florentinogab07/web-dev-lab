@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f2f2f2;
+    }
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>About Us</h1>
+  <p>Welcome to our café! We serve freshly brewed coffee and delicious pastries daily. 
+     Our mission is to provide a cozy environment for everyone to relax and enjoy.</p>
+
+  <a href="nav-page.html">← Back to Home</a>
+</body>
+</html>
