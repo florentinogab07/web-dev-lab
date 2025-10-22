@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button id="add-button">Add</button>
+    <p id="result"></p>
+    <script>
+      document.getElementById('add-button').onclick = function() {
+        const num1 = parseFloat(document.getElementById('num1').value) || 0;
+        const num2 = parseFloat(document.getElementById('num2').value) || 0;
+        document.getElementById('result').innerText = 'Result: ' + (num1 + num2);
+      }
+    </script>
+</body>
+</html>
