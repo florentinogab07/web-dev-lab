@@ -6,18 +6,21 @@
   <title>Mental Wellness & Self-Care Toolkit</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
     }
     header {
-      background: lightgreen;
+      background: #4a90e2;
       color: white;
       padding: 20px;
       text-align: center;
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
     nav {
       margin-top: 10px;
@@ -27,12 +30,22 @@
       text-decoration: none;
       color: white;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffdd57;
     }
     section {
+      display: none;
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
-      border-bottom: 1px solid #ddd;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    section.active {
+      display: block;
     }
     h2 {
       color: #4a90e2;
@@ -44,29 +57,42 @@
       padding: 15px;
       margin-top: 20px;
     }
+    button {
+      margin-top: 15px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #357ac9;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Mental Wellness & Self-Care Toolkit</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#mindfulness">Mindfulness</a>
-      <a href="#stress">Stress Management</a>
-      <a href="#sleep">Healthy Sleep</a>
-      <a href="#nutrition">Nutrition</a>
-      <a href="#exercise">Exercise</a>
-      <a href="#journaling">Journaling</a>
-      <a href="#connections">Connections</a>
-      <a href="#digital">Digital Detox</a>
-      <a href="#goals">Goal Setting</a>
-      <a href="#help">Seeking Help</a>
+      <a href="#" data-page="home">Home</a>
+      <a href="#" data-page="mindfulness">Mindfulness</a>
+      <a href="#" data-page="stress">Stress Management</a>
+      <a href="#" data-page="sleep">Healthy Sleep</a>
+      <a href="#" data-page="nutrition">Nutrition</a>
+      <a href="#" data-page="exercise">Exercise</a>
+      <a href="#" data-page="journaling">Journaling</a>
+      <a href="#" data-page="connections">Connections</a>
+      <a href="#" data-page="digital">Digital Detox</a>
+      <a href="#" data-page="goals">Goal Setting</a>
+      <a href="#" data-page="help">Seeking Help</a>
     </nav>
   </header>
 
-  <section id="home">
+  <section id="home" class="active">
     <h2>Welcome</h2>
-    <p>This toolkit is designed to support your journey towards better mental wellness and self-care. Click the links above to explore different areas of self-care and mental health strategies.</p>
+    <p>This toolkit supports your journey toward better mental wellness and self-care. Click a section above to explore different areas of personal growth.</p>
   </section>
 
   <section id="mindfulness">
@@ -81,12 +107,12 @@
 
   <section id="sleep">
     <h2>Healthy Sleep</h2>
-    <p>Maintain a regular sleep schedule, avoid screens before bed, and create a comfortable sleep environment for better rest.</p>
+    <p>Maintain a regular sleep schedule, avoid screens before bed, and create a comfortable environment for better rest.</p>
   </section>
 
   <section id="nutrition">
     <h2>Nutrition</h2>
-    <p>Eat balanced meals, stay hydrated, and limit excessive sugar and caffeine intake to support mental and physical health.</p>
+    <p>Eat balanced meals, stay hydrated, and limit excessive sugar and caffeine to support your mind and body.</p>
   </section>
 
   <section id="exercise">
@@ -96,31 +122,53 @@
 
   <section id="journaling">
     <h2>Journaling</h2>
-    <p>Write down thoughts and feelings to process emotions, track progress, and encourage self-reflection.</p>
+    <p>Write down your thoughts and feelings to process emotions, track growth, and promote self-reflection.</p>
   </section>
 
   <section id="connections">
     <h2>Connections</h2>
-    <p>Build and maintain supportive relationships with family, friends, or support groups to enhance emotional well-being.</p>
+    <p>Build and maintain supportive relationships with family, friends, or support groups to enhance well-being.</p>
   </section>
 
   <section id="digital">
     <h2>Digital Detox</h2>
-    <p>Take breaks from social media and screens to reduce overstimulation and reconnect with offline activities.</p>
+    <p>Take regular breaks from social media and screens to reduce overstimulation and reconnect with the real world.</p>
   </section>
 
   <section id="goals">
     <h2>Goal Setting</h2>
-    <p>Set realistic, achievable goals to give yourself purpose and direction while celebrating small wins along the way.</p>
+    <p>Set realistic, achievable goals to guide your growth and celebrate every small success.</p>
   </section>
 
   <section id="help">
     <h2>Seeking Help</h2>
-    <p>Don’t hesitate to reach out to a counselor, therapist, or mental health professional if you need additional support.</p>
+    <p>Reach out to a counselor, therapist, or trusted person whenever you feel overwhelmed — asking for help is strength, not weakness.</p>
   </section>
 
   <footer>
     <p>&copy; 2025 Mental Wellness & Self-Care Toolkit</p>
   </footer>
+
+  <script>
+    // JavaScript for navigation between sections
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('data-page');
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+
+        document.getElementById(target).classList.add('active');
+
+        // Scroll to top when section changes
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
