@@ -6,69 +6,83 @@
   <title>Mental Wellness & Self-Care Toolkit</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      scroll-behavior: smooth;
+      background-color: #f6f8fb;
+      color: #333;
     }
+
     header {
-      background: #4a90e2;
+      background-color: #6c9bd2;
       color: white;
-      padding: 20px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 25px 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
+
     nav {
       margin-top: 10px;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
+
+    nav button {
+      background: white;
+      color: #4a90e2;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 10px 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    nav button:hover {
+      background: #4a90e2;
       color: white;
-      font-weight: bold;
-      transition: color 0.3s;
     }
-    nav a:hover {
-      color: #ffdd57;
-    }
+
     section {
       display: none;
-      padding: 40px 20px;
       max-width: 900px;
-      margin: auto;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
     }
+
     section.active {
       display: block;
     }
+
+    section img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
     h2 {
       color: #4a90e2;
+      margin-bottom: 10px;
     }
+
     footer {
-      background: #4a90e2;
+      background-color: #4a90e2;
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 20px;
+      font-size: 0.9em;
+      margin-top: 30px;
     }
-    button {
-      margin-top: 15px;
-      background: #4a90e2;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #357ac9;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -76,99 +90,102 @@
   <header>
     <h1>Mental Wellness & Self-Care Toolkit</h1>
     <nav>
-      <a href="#" data-page="home">Home</a>
-      <a href="#" data-page="mindfulness">Mindfulness</a>
-      <a href="#" data-page="stress">Stress Management</a>
-      <a href="#" data-page="sleep">Healthy Sleep</a>
-      <a href="#" data-page="nutrition">Nutrition</a>
-      <a href="#" data-page="exercise">Exercise</a>
-      <a href="#" data-page="journaling">Journaling</a>
-      <a href="#" data-page="connections">Connections</a>
-      <a href="#" data-page="digital">Digital Detox</a>
-      <a href="#" data-page="goals">Goal Setting</a>
-      <a href="#" data-page="help">Seeking Help</a>
+      <button data-page="home">Home</button>
+      <button data-page="mindfulness">Mindfulness</button>
+      <button data-page="stress">Stress</button>
+      <button data-page="sleep">Sleep</button>
+      <button data-page="nutrition">Nutrition</button>
+      <button data-page="exercise">Exercise</button>
+      <button data-page="journaling">Journaling</button>
+      <button data-page="connections">Connections</button>
+      <button data-page="digital">Digital Detox</button>
+      <button data-page="goals">Goals</button>
+      <button data-page="help">Help</button>
     </nav>
   </header>
 
   <section id="home" class="active">
+    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773" alt="Wellness">
     <h2>Welcome</h2>
-    <p>This toolkit supports your journey toward better mental wellness and self-care. Click a section above to explore different areas of personal growth.</p>
+    <p>Welcome to your Mental Wellness & Self-Care Toolkit — a space to explore ways to stay calm, balanced, and focused on your well-being.</p>
   </section>
 
   <section id="mindfulness">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Mindfulness">
     <h2>Mindfulness</h2>
-    <p>Practice being present through meditation, deep breathing, and gratitude exercises to reduce stress and improve focus.</p>
+    <p>Practice mindfulness through meditation, deep breathing, and gratitude to bring peace and clarity into your daily life.</p>
   </section>
 
   <section id="stress">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Stress Management">
     <h2>Stress Management</h2>
-    <p>Identify stress triggers and use relaxation techniques such as progressive muscle relaxation, time management, and hobbies.</p>
+    <p>Learn how to manage stress through relaxation techniques, hobbies, and positive self-talk to maintain emotional balance.</p>
   </section>
 
   <section id="sleep">
+    <img src="https://images.unsplash.com/photo-1516728778615-2d590ea1856f" alt="Sleep">
     <h2>Healthy Sleep</h2>
-    <p>Maintain a regular sleep schedule, avoid screens before bed, and create a comfortable environment for better rest.</p>
+    <p>Establish a relaxing bedtime routine and avoid screens before sleep to recharge your mind and body effectively.</p>
   </section>
 
   <section id="nutrition">
+    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Nutrition">
     <h2>Nutrition</h2>
-    <p>Eat balanced meals, stay hydrated, and limit excessive sugar and caffeine to support your mind and body.</p>
+    <p>Fuel your body with nutritious foods and hydration to boost your energy and mental clarity throughout the day.</p>
   </section>
 
   <section id="exercise">
+    <img src="https://images.unsplash.com/photo-1571019613914-85f342c55f2e" alt="Exercise">
     <h2>Exercise</h2>
-    <p>Engage in physical activities like walking, yoga, or sports to release endorphins and boost mood.</p>
+    <p>Engage in physical activities like yoga, jogging, or dancing — movement strengthens both body and mind.</p>
   </section>
 
   <section id="journaling">
+    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" alt="Journaling">
     <h2>Journaling</h2>
-    <p>Write down your thoughts and feelings to process emotions, track growth, and promote self-reflection.</p>
+    <p>Write down your thoughts, feelings, and goals. Journaling helps you reflect and stay connected with your emotions.</p>
   </section>
 
   <section id="connections">
+    <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47" alt="Connections">
     <h2>Connections</h2>
-    <p>Build and maintain supportive relationships with family, friends, or support groups to enhance well-being.</p>
+    <p>Stay close to people who lift you up. Nurturing positive relationships builds resilience and happiness.</p>
   </section>
 
   <section id="digital">
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Digital Detox">
     <h2>Digital Detox</h2>
-    <p>Take regular breaks from social media and screens to reduce overstimulation and reconnect with the real world.</p>
+    <p>Take breaks from screens to rest your eyes and mind. Reconnect with nature or enjoy offline hobbies.</p>
   </section>
 
   <section id="goals">
+    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe" alt="Goals">
     <h2>Goal Setting</h2>
-    <p>Set realistic, achievable goals to guide your growth and celebrate every small success.</p>
+    <p>Set realistic, measurable goals and celebrate every small step — growth is a journey, not a race.</p>
   </section>
 
   <section id="help">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Help">
     <h2>Seeking Help</h2>
-    <p>Reach out to a counselor, therapist, or trusted person whenever you feel overwhelmed — asking for help is strength, not weakness.</p>
+    <p>Never hesitate to seek support from friends, mentors, or mental health professionals when needed.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Mental Wellness & Self-Care Toolkit</p>
+    <p>&copy; 2025 Mental Wellness & Self-Care Toolkit | Designed with care for your well-being</p>
   </footer>
 
   <script>
-    // JavaScript for navigation between sections
-    const links = document.querySelectorAll('nav a');
+    const buttons = document.querySelectorAll('nav button');
     const sections = document.querySelectorAll('section');
 
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = link.getAttribute('data-page');
-
-        sections.forEach(section => {
-          section.classList.remove('active');
-        });
-
-        document.getElementById(target).classList.add('active');
-
-        // Scroll to top when section changes
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const page = button.getAttribute('data-page');
+        sections.forEach(section => section.classList.remove('active'));
+        document.getElementById(page).classList.add('active');
       });
     });
   </script>
 </body>
 </html>
+
