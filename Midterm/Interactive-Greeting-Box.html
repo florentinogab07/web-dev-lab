@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Greeting Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .greeting-box {
+            background: white;
+            padding: 25px;
+            width: 300px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a047;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="greeting-box">
+        <h2>Interactive Greeting Box</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="showGreeting()">Greet Me</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showGreeting() {
+            const name = document.getElementById("nameInput").value;
+            const messageBox = document.getElementById("message");
+
+            if (name.trim() === "") {
+                messageBox.textContent = "Please enter your name!";
+            } else {
+                messageBox.textContent = `Hello, ${name}! Welcome!`;
+            }
+        }
+    </script>
+
+</body>
+</html>
